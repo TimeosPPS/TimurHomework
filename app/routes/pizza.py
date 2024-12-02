@@ -38,9 +38,9 @@ def mainpage():
     if temperature < 0:
         pizza = session.query(Pizza).filter_by(id=4).all()
     elif 0 <= temperature <= 20:
-        pizza = session.query(Pizza).filter_by(id=4).all()
+        pizza = session.query(Pizza).filter_by(id=3).all()
     else:
-        pizza = session.query(Pizza).filter_by(id=4).all()
+        pizza = session.query(Pizza).filter_by(id=2).all()
 
     session.close()
 
