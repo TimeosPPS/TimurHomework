@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container text-center">
+<h1 class>{% include "index.html" %}</h1>
+
+<ul>
+    {% for pizza in menu|sort(attribute="name")%}
+    <li class="pizzas">
+        <img src="{{ pizza.image_url }}" alt="{{ pizza.name }}" class="pizza-image"><br>
+        <b>{{pizza.name}}</b><br>
+        {{pizza.description}}<br>
+        {{pizza.price}} грн
+    </li>
+    {% endfor %}
+</ul>
+</div>
+</body>
+</html>
